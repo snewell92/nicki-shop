@@ -1,5 +1,7 @@
 # Nicki Shop
 
+[![Deployment Status](https://api.netlify.com/api/v1/badges/d8656f96-2837-45e8-b8db-23a19dccb5e2/deploy-status)](https://app.netlify.com/sites/melodic-lamington-792e06/deploys)
+
 This was bootstrapped with the minimal astro template
 
 ```
