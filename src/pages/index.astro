@@ -1,19 +1,31 @@
 ---
+import { Icon } from "astro-icon";
+import {
+  BackgroundImage,
+  ImageSupportDetection,
+} from "astro-imagetools/components";
 ---
 
-<html lang="en" data-theme="cupcake" >
+<html lang="en" data-theme="cupcake" class="bg-secondary" >
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <title>Nicki Newell Art</title>
+    <ImageSupportDetection />
+    <style is:global>
+      /* Workaround for no bg-fixed support on BackgroundImage */
+      div.section-parent > section {
+        background-attachment: fixed;
+      }
+    </style>
   </head>
   <body>
-    <div class="overflow-x-hidden">
+    <div class="overflow-x-hidden section-parent">
 
-      <section class="bg-no-repeat bg-cover bg-center bg-fixed bg-[url('https://images.squarespace-cdn.com/content/v1/618ea238bf2a834c1edce3dd/3a38259b-d601-4042-8e52-1a685d8cc240/Shop_Front_Long.jpg')]">
-        <nav class="flex items-center justify-between flex-wrap bg-transparent p-6">
+      <BackgroundImage preload="webp" position="center" src="/src/imgs/forest-scene.jpg" alt="Magical Forest with a cozy cottage embedded in a tree." >
+      <nav class="flex items-center justify-between flex-wrap bg-transparent p-6">
           <div class="flex items-center flex-shrink-0 text-white">
             <img class="w-[100vw] sm:w-[75vw] lg:max-w-[28rem] lg:w-[50vw] xl:max-w-[50vw]" alt="Nicki Newell Art, Illustrator and Vlogger and Mom." src="https://images.squarespace-cdn.com/content/v1/618ea238bf2a834c1edce3dd/f29c0edd-e051-48e6-b5c3-e4d5f1e6199c/Untitled_Artwork+78.png?format=1500w" />
           </div>
@@ -25,6 +37,10 @@
               <a href="/supportme" class="block mt-4 lg:inline-block lg:mt-0 hover:text-secondary mr-4">Support Me</a>
               <a href="https://ko-fi.com/nickinewellart/commissions" class="block mt-4 lg:inline-block lg:mt-0 hover:text-secondary mr-4">Commissions</a>
               <a href="https://nickinewell.art/blog" class="block mt-4 lg:inline-block lg:mt-0 hover:text-secondary mr-4">Blog</a>
+              <a href="https://nickinewell.art/blog" class="block mt-4 lg:inline-block lg:mt-0 hover:text-secondary mr-4">Blog</a>
+              <span class="block mt-4 lg:inline-block lg:mt-9 hover:text-secondary mr-4">
+                <Icon pack="uil" name="shopping-cart-alt" class="w-8 h-8" />
+              </span>
             </div>
           </div>
         </nav>
@@ -33,7 +49,7 @@
           <h1 class="text-center mx-auto text-8xl mt-4 underline decoration-secondary">Nicki Newell</h1>
           <p class="animate-bounce w-6 h-6 mx-auto text-4xl mt-48 [-webkit-text-stroke:5px_hsl(var(--wa))]">↓</p>
         </div>
-      </section>
+      </BackgroundImage>
 
       <section class="bg-secondary">
 
