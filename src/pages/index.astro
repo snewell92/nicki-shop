@@ -1,9 +1,9 @@
 ---
-import { Icon } from "astro-icon";
-import {
-  BackgroundImage,
-  ImageSupportDetection,
-} from "astro-imagetools/components";
+import { Icon } from "astro-icon"
+import { Image, Picture } from '@astrojs/image/components';
+import ForestScene from "../imgs/forest-scene.jpg";
+import Logo from "../imgs/nicki-logo.png";
+import CoffeeCat from "../imgs/coffee-cat.gif";
 ---
 
 <html lang="en" data-theme="cupcake" class="bg-secondary" >
@@ -13,21 +13,14 @@ import {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <title>Nicki Newell Art</title>
-    <ImageSupportDetection />
-    <style is:global>
-      /* Workaround for no bg-fixed support on BackgroundImage */
-      div.section-parent > section {
-        background-attachment: fixed;
-      }
-    </style>
   </head>
   <body>
-    <div class="overflow-x-hidden section-parent">
-
-      <BackgroundImage preload="webp" position="center" src="/src/imgs/forest-scene.jpg" alt="Magical Forest with a cozy cottage embedded in a tree." >
-      <nav class="flex items-center justify-between flex-wrap bg-transparent p-6">
+    <div class="overflow-x-hidden">
+      <section>
+        <Picture class="z-0 absolute top-0 left-0" src={ForestScene} format="webp" aspectRatio='5:3' widths={[1500]} alt="Magical Forest with a cozy cottage" />
+        <nav class="[&>*]:z-20 flex items-center justify-between flex-wrap bg-transparent p-6">
           <div class="flex items-center flex-shrink-0 text-white">
-            <img class="w-[100vw] sm:w-[75vw] lg:max-w-[28rem] lg:w-[50vw] xl:max-w-[50vw]" alt="Nicki Newell Art, Illustrator and Vlogger and Mom." src="https://images.squarespace-cdn.com/content/v1/618ea238bf2a834c1edce3dd/f29c0edd-e051-48e6-b5c3-e4d5f1e6199c/Untitled_Artwork+78.png?format=1500w" />
+            <Image class="w-[100vw] sm:w-[75vw] lg:max-w-[28rem] lg:w-[50vw] xl:max-w-[50vw]" alt="Nicki Newell Art, Illustrator and Vlogger and Mom." src={Logo} />
           </div>
           <div class="w-full block text-center sm:text-right flex-grow sm:flex sm:items-center sm:flex-row-reverse sm:w-auto">
             <div class="text-2xl sm:text-sm md:text-[1rem] lg:text-lg lg:flex-grow text-white">
@@ -44,12 +37,12 @@ import {
             </div>
           </div>
         </nav>
-        <div class="text-center mt-32 pb-[24rem] text-white">
+        <div class="relative text-center mt-32 pb-[24rem] text-white">
           <p class="text-center mx-auto text-xl">Welcome to the Shop of</p>
           <h1 class="text-center mx-auto text-8xl mt-4 underline decoration-secondary">Nicki Newell</h1>
           <p class="animate-bounce w-6 h-6 mx-auto text-4xl mt-48 [-webkit-text-stroke:5px_hsl(var(--wa))]">↓</p>
         </div>
-      </BackgroundImage>
+      </section>
 
       <section class="bg-secondary">
 
@@ -61,7 +54,7 @@ import {
             </h2>
           </div>
 
-        <img class="max-w-[445px] w-[80vw] md:w-[40vw] mask mask-squircle mt-8 md:mt-0 md:-ml-24" src="https://images.squarespace-cdn.com/content/v1/618ea238bf2a834c1edce3dd/baaae1cf-bccd-4c60-a70d-65774c6d2ade/Untitled_Artwork+2.gif?format=1000w" />
+        <Image class="max-w-[445px] w-[80vw] md:w-[40vw] mask mask-squircle mt-8 md:mt-0 md:-ml-24" src={CoffeeCat} />
 
         </div>
 
