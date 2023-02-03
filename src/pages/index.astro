@@ -1,11 +1,7 @@
 ---
-import { Icon } from "astro-icon"
-import { Image, Picture } from '@astrojs/image/components';
-import ForestScene from "../imgs/forest-scene.jpg";
-import Logo from "../imgs/nicki-logo.png";
 import CoffeeCat from "../imgs/coffee-cat.gif";
+import { Image } from '@astrojs/image/components';
 ---
-
 <html lang="en" data-theme="cupcake" class="bg-secondary" >
   <head>
     <meta charset="utf-8" />
@@ -16,69 +12,29 @@ import CoffeeCat from "../imgs/coffee-cat.gif";
   </head>
   <body>
     <div class="overflow-x-hidden">
-      <section>
-        <Picture class="z-0 absolute top-0 left-0" src={ForestScene} format="webp" aspectRatio='5:3' widths={[1500]} alt="Magical Forest with a cozy cottage" />
-        <nav class="[&>*]:z-20 flex items-center justify-between flex-wrap bg-transparent p-6">
-          <div class="flex items-center flex-shrink-0 text-white">
-            <Image class="w-[100vw] sm:w-[75vw] lg:max-w-[28rem] lg:w-[50vw] xl:max-w-[50vw]" alt="Nicki Newell Art, Illustrator and Vlogger and Mom." src={Logo} />
-          </div>
-          <div class="w-full block text-center sm:text-right flex-grow sm:flex sm:items-center sm:flex-row-reverse sm:w-auto">
-            <div class="text-2xl sm:text-sm md:text-[1rem] lg:text-lg lg:flex-grow text-white">
-              <a href="/" class="underline block mt-4 lg:inline-block lg:mt-0 hover:text-secondary mr-4">Home</a>
-              <a href="/about" class="block mt-4 lg:inline-block lg:mt-0 hover:text-secondary mr-4">About</a>
-              <a href="https://nicki.thenewells.us" class="block mt-4 lg:inline-block lg:mt-0 hover:text-secondary mr-4">Portfolio</a>
-              <a href="/supportme" class="block mt-4 lg:inline-block lg:mt-0 hover:text-secondary mr-4">Support Me</a>
-              <a href="https://ko-fi.com/nickinewellart/commissions" class="block mt-4 lg:inline-block lg:mt-0 hover:text-secondary mr-4">Commissions</a>
-              <a href="https://nickinewell.art/blog" class="block mt-4 lg:inline-block lg:mt-0 hover:text-secondary mr-4">Blog</a>
-              <a href="https://nickinewell.art/blog" class="block mt-4 lg:inline-block lg:mt-0 hover:text-secondary mr-4">Blog</a>
-              <span class="block mt-4 lg:inline-block lg:mt-9 hover:text-secondary mr-4">
-                <Icon pack="uil" name="shopping-cart-alt" class="w-8 h-8" />
-              </span>
-            </div>
-          </div>
-        </nav>
-        <div class="relative text-center mt-32 pb-[24rem] text-white">
-          <p class="text-center mx-auto text-xl">Welcome to the Shop of</p>
-          <h1 class="text-center mx-auto text-8xl mt-4 underline decoration-secondary">Nicki Newell</h1>
-          <p class="animate-bounce w-6 h-6 mx-auto text-4xl mt-48 [-webkit-text-stroke:5px_hsl(var(--wa))]">↓</p>
+      <section class="h-full w-full bg-secondary">
+
+        <h1 class="text-4xl text-center mx-auto mt-12">👷🏼‍♂️ Site under construction</h1>
+
+        <p class="text-xl text-center mx-auto mt-6">The links below go to active sites to engage with me and my art ❤️</p>
+
+        <ul class="grid sm:grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-6 justify-items-stretch mx-16 mt-4 text-white">
+          <a class="justify-self-auto bg-primary text-center rounded-md justify-center py-4 sm:py-2 hover:text-accent h-fit text-xl" href="https://www.instagram.com/nickinewellart" target="_blank" aria-label="Instagram">Instagram</a>
+          <a class="justify-self-auto bg-primary text-center rounded-md justify-center py-4 sm:py-2 hover:text-accent h-fit text-xl" href="https://www.youtube.com/dillydallydoodles" target="_blank" aria-label="YouTube">YouTube</a>
+          <a class="justify-self-auto bg-primary text-center rounded-md justify-center py-4 sm:py-2 hover:text-accent h-fit text-xl" href="https://www.facebook.com/nickinewellart" target="_blank" aria-label="Facebook">Facebook</a>
+          <a class="justify-self-auto bg-primary text-center rounded-md justify-center py-4 sm:py-2 hover:text-accent h-fit text-xl" href="http://twitter.com/nickinoodleart" target="_blank" aria-label="Twitter">Twitter</a>
+          <a class="justify-self-auto bg-primary text-center rounded-md justify-center py-4 sm:py-2 hover:text-accent h-fit text-xl" href="http://tiktok.com/@nickinoodleart" target="_blank" aria-label="TikTok">TikTok</a>
+          <a class="justify-self-auto bg-primary text-center rounded-md justify-center py-4 sm:py-2 hover:text-accent h-fit text-xl" href="http://ko-fi.com/nickinewellart/commissions" target="_blank" aria-label="Commissions via Ko-fi">Commissions - Kofi</a>
+          <a class="justify-self-auto bg-primary text-center rounded-md justify-center py-4 sm:py-2 hover:text-accent h-fit text-xl" href="http://ko-fi.com/nickinewellart" target="_blank" aria-label="Tip Jar via Kofi">Tip Jar - Kofi</a>
+          <a class="justify-self-auto bg-primary text-center rounded-md justify-center py-4 sm:py-2 hover:text-accent h-fit text-xl" href="https://patreon.com/nickinewellart" target="_blank" aria-label="Patreon">Patreon</a>
+          <a class="justify-self-auto bg-primary text-center rounded-md justify-center py-4 sm:py-2 hover:text-accent h-fit text-xl" href="https://www.etsy.com/shop/NickiNewellArtUK" target="_blank" aria-label="UK Etsy">Etsy (UK Only)</a>
+          <span class="hidden md:block"></span>
+          <a class="justify-self-auto bg-primary text-center rounded-md justify-center py-4 sm:py-2 hover:text-accent md:h-fit text-xl" href="https://Nickinewellart.redbubble.com" target="_blank" aria-label="Redbubble">Redbubble</a>
+        </ul>
+
+        <div class="relative md:flex justify-center pt-2">
+          <Image class="max-w-[445px] w-[80vw] md:w-[40vw] mask mask-squircle mt-8" src={CoffeeCat} alt="Cat smelling great coffee." />
         </div>
       </section>
-
-      <section class="bg-secondary">
-
-        <div class="relative md:flex justify-center pt-20 pb-36">
-
-          <div class="w-80vw md:w-1/2 h-fit lg:h-48 bg-base-100 text-primary-content p-8 mt-16 z-10">
-            <h2 class="font-thin leading-loose text-2xl md:text-lg m-auto">
-              Please feel free to take your time browsing the goods I have to offer. If there is something out of stock be sure to sign up at the bottom of the page to receive our missives that go out informing you of restocks and new items.
-            </h2>
-          </div>
-
-        <Image class="max-w-[445px] w-[80vw] md:w-[40vw] mask mask-squircle mt-8 md:mt-0 md:-ml-24" src={CoffeeCat} />
-
-        </div>
-
-      </section>
-
-      <section class="bg-base-100 py-48 md:py-24">
-        <h1 class="text-accent text-center text-6xl font-bold">Shop</h1>
-        <hr class="bg-warning text-center h-[.09rem] w-[80vw] my-8 mx-auto" />
-        <p class="text-accent text-center animate-pulse">TODO...</p>
-        <div class="border border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto">
-          <div class="animate-pulse flex space-x-4">
-            <div class="flex-1 space-y-6 py-1">
-              <div class="h-2 bg-slate-700 rounded"></div>
-              <div class="space-y-3">
-                <div class="grid grid-cols-3 gap-4">
-                  <div class="h-2 bg-slate-700 rounded col-span-2"></div>
-                  <div class="h-2 bg-slate-700 rounded col-span-1"></div>
-                </div>
-                <div class="h-2 bg-slate-700 rounded"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
   </body>
 </html>
