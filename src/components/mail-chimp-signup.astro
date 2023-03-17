@@ -73,6 +73,7 @@
   }
 
   function setSuccess() {
+    unsetLoading();
     $successResponseEl.classList.remove("hidden");
     $submitEl.disabled = true;
     $submitEl.classList.add("disabled");
