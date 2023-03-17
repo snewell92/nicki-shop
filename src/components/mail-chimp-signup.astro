@@ -3,7 +3,7 @@
 <div id="mc_embed_signup" class="max-w-[65vw] w-fit mx-auto">
   <!-- can use the edge function to control te ux more if the 403 from edge -> mailchimp is figured out -->
   <!-- <form action="/signup" method="post" name="mc-embedded-subscribe-form" id="signup-form" class="validate" novalidate> -->
-  <form action="https://wytchelmgrotto.us20.list-manage.com/subscribe/post?u=ecff512b8567c67909af60ab5&amp;id=a372ec2ebe&amp;f_id=00297feaf0https://wytchelmgrotto.us20.list-manage.com/subscribe/post?u=ecff512b8567c67909af60ab5&amp;id=a372ec2ebe&amp;f_id=00297feaf0" method="post" name="mc-embedded-subscribe-form" id="signup-form" class="validate" novalidate>
+  <form action="https://wytchelmgrotto.us20.list-manage.com/subscribe/post?u=ecff512b8567c67909af60ab5&amp;id=a372ec2ebe&amp;f_id=00297feaf0https://wytchelmgrotto.us20.list-manage.com/subscribe/post?u=ecff512b8567c67909af60ab5&amp;id=a372ec2ebe&amp;f_id=00297feaf0" method="post" name="mc-embedded-subscribe-form" id="mc-embedded-subscribe-form" class="validate" novalidate  >
 
     <div>
 			<h2 class="text-2xl mb-6">Subscribe to my Newsletter ✍️</h2>
@@ -34,14 +34,17 @@
 
 			<div>
 				<div>
-					<input type="submit" class="btn w-full btn-secondary text-white mb-4 mt-6 underline" value="Subscribe" name="subscribe" />
+					<input type="submit" class="btn w-full btn-secondary text-white mb-4 mt-6 underline" value="Subscribe" name="subscribe" id="mce-embedded-subscribe" />
+
+          <p class="hidden" aria-hidden="true"><a href="http://eepurl.com/hReKTT" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
+
 					<span id="loading-indicator" class="hidden btn btn-secondary btn-square loading"></span>
 				</div>
 			</div>
 		</div>
 	</form>
 </div>
-
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
 <script>
   const $formEl: HTMLFormElement = document.forms["mc-embedded-subscribe-form"];
   const $emailEl = $formEl.elements.EMAIL;
@@ -104,6 +107,8 @@
       event.preventDefault();
       return false;
     }
+
+    setTimeout(setSuccess, 500)
 
     return true;
   }
