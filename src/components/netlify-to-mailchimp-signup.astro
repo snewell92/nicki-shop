@@ -1,0 +1,136 @@
+---
+---
+<div class="max-w-[65vw] w-fit mx-auto">
+  <form netlify netlify-honeypot="age"  action="/twin" method="post" name="signup-form">
+    <div>
+			<h2 class="text-2xl mb-6">Subscribe to my Newsletter ✍️</h2>
+
+			<p class="hidden" aria-hidden="true">
+        <label>
+          Age: <input name="age" />
+        </label>
+      </p>
+
+      <div class="form-control w-full max-w-xs">
+        <label class="label" for="email">
+          <span class="label-text">Email Address</span>
+          <span class="label-text-alt italic text-accent">required</span>
+        </label>
+        <input name="email" required type="email" placeholder="your-email@here.please" class="input input-bordered w-full max-w-xs" />
+      </div>
+
+      <div class="form-control w-full max-w-xs">
+        <label class="label" for="name">
+          <span class="label-text">Name</span>
+        </label>
+        <input name="name" type="text" value="" placeholder="Pidge" class="input input-bordered w-full max-w-xs" />
+      </div>
+
+			<div id="signup-responses" class="text-center max-w-xs my-2">
+				<div id="error-response" class="hidden underline decoration-error text-xl mb-4"></div>
+				<div id="success-response" class="hidden underline decoration-emerald-200 text-xl mb-4">
+				  ✅ We have received your email and are signing you up!
+				</div>
+			</div>
+
+			<div>
+				<div>
+					<button type="submit" class="btn w-full btn-secondary text-white mb-4 mt-6 underline">Subscribe</button>
+					<span id="loading-indicator" class="hidden btn btn-secondary btn-square loading"></span>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<script>
+  const $formEl: HTMLFormElement = document.forms["signup-form"];
+  const $emailEl = $formEl.elements.email;
+  const $nameEl = $formEl.elements.name;
+  const $submitEl = $formEl.elements[3]; // hold b/c button is third form el
+
+  const $errorResponseEl = window["error-response"];
+  const $successResponseEl = window["success-response"];
+  const $loaderEl = window["loading-indicator"];
+
+  function setLoading() {
+    $loaderEl.classList.remove("hidden");
+    $emailEl.disabled = true;
+    $nameEl.disabled = true;
+  }
+
+  function unsetLoading() {
+    $loaderEl.classList.add("hidden");
+    $emailEl.disabled = false;
+    $nameEl.disabled = false;
+  }
+
+  function resetResponses() {
+    $errorResponseEl.classList.add("hidden");
+    $successResponseEl.classList.add("hidden");
+  }
+
+  function setSuccess() {
+    unsetLoading();
+    $successResponseEl.classList.remove("hidden");
+    $submitEl.disabled = true;
+    $submitEl.classList.add("disabled");
+  }
+
+  function setError() {
+    $errorResponseEl.innerText = "An error occured, you have not been subscribed";
+    $errorResponseEl.classList.remove("hidden");
+
+    setTimeout(resetResponses, 5000);
+  }
+
+  function checkEmail() {
+    if (!$formEl.reportValidity()) {
+      $submitEl.disabled = true;
+      $submitEl.classList.add("disabled");
+      return false;
+    }
+
+    $submitEl.disabled = false;
+    $submitEl.classList.remove("disabled");
+
+    return true;
+  }
+
+  function handleSubmit(event: SubmitEvent) {
+    setLoading();
+    // Use JS to submit manually to control UX
+
+    event.preventDefault();
+    if (!$formEl.reportValidity()) {
+      unsetLoading();
+      event.preventDefault();
+      return;
+    }
+
+    const formData = new FormData($formEl);
+
+    fetch("/twin", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString()
+    })
+      .then(setSuccess)
+      .catch(setError);
+  }
+
+  // small debounce function
+  function debounce(fn: Function, debounceMs = 400) {
+    let prev: number;
+    return () => {
+      if (prev) {
+        clearTimeout(prev);
+      }
+
+      prev = setTimeout(fn, debounceMs);
+    };
+  }
+
+  $formEl.onsubmit = handleSubmit;
+  $emailEl.onblur = checkEmail;
+  $emailEl.oninput = debounce(checkEmail);
+</script>
