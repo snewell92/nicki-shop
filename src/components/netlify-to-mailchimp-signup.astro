@@ -35,7 +35,7 @@
 
 			<div>
 				<div>
-					<button type="submit" class="btn w-full btn-secondary text-white mb-4 mt-6 underline">Subscribe</button>
+					<button type="submit" id="submit-btn" class="btn w-full btn-secondary text-white mb-4 mt-6 underline">Subscribe</button>
 					<span id="loading-indicator" class="hidden btn btn-secondary btn-square loading"></span>
 				</div>
 			</div>
@@ -46,8 +46,7 @@
   const $formEl: HTMLFormElement = document.forms["signup-form"];
   const $emailEl = $formEl.elements.email;
   const $nameEl = $formEl.elements.name;
-  const $submitEl = $formEl.elements[3]; // hold b/c button is third form el
-
+  const $submitEl = window["submit-btn"];
   const $errorResponseEl = window["error-response"];
   const $successResponseEl = window["success-response"];
   const $loaderEl = window["loading-indicator"];
