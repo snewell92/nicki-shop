@@ -6,7 +6,7 @@
 			<h2 class="text-2xl mb-6">Subscribe to my Newsletter ✍️</h2>
 
 			<p class="hidden" aria-hidden="true">
-        <label>
+        <label for="age">
           Age: <input name="age" />
         </label>
       </p>
@@ -52,16 +52,23 @@
   const $successResponseEl = window["success-response"];
   const $loaderEl = window["loading-indicator"];
 
-  function setLoading() {
-    $loaderEl.classList.remove("hidden");
+  function disableInputs() {
     $emailEl.disabled = true;
     $nameEl.disabled = true;
   }
 
-  function unsetLoading() {
-    $loaderEl.classList.add("hidden");
+  function enableInputs() {
     $emailEl.disabled = false;
     $nameEl.disabled = false;
+  }
+
+  function setLoading() {
+    $loaderEl.classList.remove("hidden");
+  }
+
+  function unsetLoading() {
+    $loaderEl.classList.add("hidden");
+    enableInputs();
   }
 
   function resetResponses() {
@@ -107,12 +114,14 @@
       return;
     }
 
-    const formData = new FormData($formEl);
+    const formData = new FormData(document.forms["signup-form"]);
+    const postBody = new URLSearchParams(formData).toString();
+    disableInputs();
 
     fetch("/twin", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString()
+      body: postBody
     })
       .then(setSuccess)
       .catch(setError);
