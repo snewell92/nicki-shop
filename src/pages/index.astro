@@ -1,6 +1,5 @@
 ---
 import CoffeeCat from "../imgs/coffee-cat.gif";
-import { Image } from '@astrojs/image/components';
 import Signup from "../components/netlify-to-mailchimp-signup.astro";
 ---
 <html lang="en" data-theme="cupcake" class="bg-secondary" >
@@ -34,7 +33,7 @@ import Signup from "../components/netlify-to-mailchimp-signup.astro";
         </ul>
 
         <div class="relative flex justify-center pt-2 mb-16">
-          <Image class="max-w-[445px] w-[80vw] md:w-[40vw] mask mask-squircle mt-8 min-w-[420px]" src={CoffeeCat} alt="Cat smelling great coffee." />
+          <img class="max-w-[445px] w-[80vw] md:w-[40vw] mask mask-squircle mt-8 min-w-[420px]" src={CoffeeCat.src} width={CoffeeCat.width} height={CoffeeCat.height} alt="A Cat smelling great coffee." />
         </div>
       </section>
       <hr class="border-t-[6px]" />

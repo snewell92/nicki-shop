@@ -9,5 +9,6 @@ export default defineConfig({
   integrations: [
     tailwind(),
     image({ serviceEntryPoint: '@astrojs/image/sharp' }),
-  ]
+  ],
+	experimental: { assets: true },
 });
