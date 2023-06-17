@@ -36,45 +36,25 @@ import CoffeeCat from "~/assets/images/coffee-cat.gif";
 
       <section class="relative m-0 p-0 overflow-hidden">
         <Image
-          class="z-0 absolute top-0 left-0"
+          class="z-0 absolute top-0 left-0 object-none w-[100vw] h-[100vh] scale-[85%] md:scale-75"
           src={ForestScene} height={ForestScene.height} width={ForestScene.width}
           alt="A Magical Forest with a cozy cottage."
         />
 
-        <!--<Picture class="z-0 absolute top-0 left-0" src={ForestScene} format="webp" aspectRatio='5:3' widths={[1500, 1000, 800, 600]} alt="Magical Forest with a cozy cottage" />-->
-
-        <!--
-        <nav class="[&>*]:z-20 flex items-center justify-between flex-wrap bg-transparent p-6">
-          <div class="w-full block text-center sm:text-right flex-grow sm:flex sm:items-center sm:flex-row-reverse sm:w-auto">
-            <div class="text-2xl sm:text-sm md:text-[1rem] lg:text-lg lg:flex-grow text-white">
-              <a href="/" class="underline block mt-4 lg:inline-block lg:mt-0 hover:text-secondary mr-4">Home</a>
-              <a href="/about" class="block mt-4 lg:inline-block lg:mt-0 hover:text-secondary mr-4">About</a>
-              <a href="https://nicki.thenewells.us" class="block mt-4 lg:inline-block lg:mt-0 hover:text-secondary mr-4">Portfolio</a>
-              <a href="/supportme" class="block mt-4 lg:inline-block lg:mt-0 hover:text-secondary mr-4">Support Me</a>
-              <a href="https://ko-fi.com/nickinewellart/commissions" class="block mt-4 lg:inline-block lg:mt-0 hover:text-secondary mr-4">Commissions</a>
-              <a href="https://nickinewell.art/blog" class="block mt-4 lg:inline-block lg:mt-0 hover:text-secondary mr-4">Blog</a>
-              <a href="https://nickinewell.art/blog" class="block mt-4 lg:inline-block lg:mt-0 hover:text-secondary mr-4">Blog</a>
-              <span class="block mt-4 lg:inline-block lg:mt-9 hover:text-secondary mr-4">
-                <Icon pack="uil" name="shopping-cart-alt" class="w-8 h-8" />
-              </span>
-            </div>
-          </div>
-        </nav>
-        -->
-        <div class="relative text-center pb-[36rem] md:pb-[24rem] text-white">
+        <div class="relative text-center pb-[15rem] md:pb-[10rem] text-neutral-content">
           <p class="text-center mx-auto text-xl mt-8 md:mt-24">Welcome to the Art of</p>
           <Image
-            class="mx-auto -mt-14 -mb-14 md:-mt-36 md:-mb-36 lg:-mt-48 lg:-mb-40 max-w-[850px] object-contains"
+            class="mx-auto -mt-14 -mb-14 md:-mt-36 md:-mb-36 lg:-mt-48 lg:-mb-40 max-w-[850px] w-[90vw] lg:w-auto object-contains"
             width={Logo.width} height={Logo.height} format="webp" src={Logo}
             alt="Nicki Newell Art"
           />
-          <p class="animate-bounce w-6 h-6 mx-auto text-4xl mt-48 [-webkit-text-stroke:5px_hsl(var(--wa))]">↓</p>
+          <p class="animate-bounce w-6 h-6 mx-auto text-4xl mt-[18rem] sm:mt-48 md:mt-54 [-webkit-text-stroke:5px_hsl(var(--wa))]">↓</p>
         </div>
       </section>
 
       <section class="bg-base-100">
 
-        <div class="relative md:flex justify-center pt-20 pb-36">
+        <div class="relative md:flex justify-center pt-10 pb-36">
 
           <div class="w-80vw md:w-1/2 h-fit lg:h-48 bg-base-content text-primary-content p-8 mt-16 z-10">
             <h2 class="font-thin leading-loose text-2xl md:text-lg m-auto">
@@ -82,7 +62,7 @@ import CoffeeCat from "~/assets/images/coffee-cat.gif";
             </h2>
           </div>
 
-        <img class="max-w-[445px] w-[80vw] md:w-[40vw] mask mask-squircle mt-8 min-w-[420px]" src={CoffeeCat.src} width={CoffeeCat.width} height={CoffeeCat.height} alt="A Cat smelling great coffee." />
+        <img class="max-w-[445px] w-[80vw] md:w-[40vw] mask mask-squircle mt-8 min-w-[420px] mx-auto mt-20 md:m-0" src={CoffeeCat.src} width={CoffeeCat.width} height={CoffeeCat.height} alt="A Cat smelling great coffee." />
 
         </div>
 
