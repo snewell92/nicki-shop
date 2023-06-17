@@ -1,9 +1,12 @@
 ---
 import { Icon } from "astro-icon"
 import { Image } from "astro:assets"
+
 import ForestScene from "~/assets/images/forest-scene.jpg";
 import Logo from "~/assets/images/nicki-logo.png";
 import CoffeeCat from "~/assets/images/coffee-cat.gif";
+
+import { Showcase } from "../components/showcase.tsx";
 ---
 
 <html lang="en" data-theme="forest" class="bg-base-100" >
@@ -34,22 +37,23 @@ import CoffeeCat from "~/assets/images/coffee-cat.gif";
         </ul>
       </nav>
 
-      <section class="relative m-0 p-0 overflow-hidden">
+      <section class="relative text-center min-h-[100vh] text-neutral-content bg-gradient-to-b from-base-100 to-neutral-focus">
+        <p class="text-center mx-auto text-xl mt-8 mb-4 md:mt-24">Welcome to the Art of</p>
         <Image
-          class="z-0 absolute top-0 left-0 object-none w-[100vw] h-[100vh] scale-[85%] md:scale-75"
-          src={ForestScene} height={ForestScene.height} width={ForestScene.width}
-          alt="A Magical Forest with a cozy cottage."
+          class="mx-auto -mt-14 -mb-14 md:-mt-36 md:-mb-36 lg:-mt-48 lg:-mb-40 min-w-[528px] max-w-[850px] w-[90vw] lg:w-auto object-contains"
+          width={Logo.width} height={Logo.height} src={Logo}
+          alt="Nicki Newell Art"
         />
+        <p class="italic mt-16">Enter the Forest</p>
+        <p class="animate-bounce mx-auto mt-8 text-8xl md:text-4xl text-warning [-webkit-text-stroke:5px_hsl(var(--wa))]">↓</p>
+      </section>
 
-        <div class="relative text-center pb-[15rem] md:pb-[10rem] text-neutral-content">
-          <p class="text-center mx-auto text-xl mt-8 md:mt-24">Welcome to the Art of</p>
-          <Image
-            class="mx-auto -mt-14 -mb-14 md:-mt-36 md:-mb-36 lg:-mt-48 lg:-mb-40 max-w-[850px] w-[90vw] lg:w-auto object-contains"
-            width={Logo.width} height={Logo.height} format="webp" src={Logo}
-            alt="Nicki Newell Art"
-          />
-          <p class="animate-bounce w-6 h-6 mx-auto text-4xl mt-[18rem] sm:mt-48 md:mt-54 [-webkit-text-stroke:5px_hsl(var(--wa))]">↓</p>
-        </div>
+      <section class="relative m-0 p-0 bg-neutral-focus overflow-hidden min-h-[100vh] h-[100vh] w-[100vw]">
+        <Showcase client:visible image={ForestScene} />
+      </section>
+
+
+      <section class="min-h-[40vh] bg-gradient-to-b to-base-100 from-neutral-focus">
       </section>
 
       <section class="bg-base-100">
@@ -58,7 +62,7 @@ import CoffeeCat from "~/assets/images/coffee-cat.gif";
 
           <div class="w-80vw md:w-1/2 h-fit lg:h-48 bg-base-content text-primary-content p-8 mt-16 z-10">
             <h2 class="font-thin leading-loose text-2xl md:text-lg m-auto">
-              Please feel free to take your time browsing the goods I have to offer in <a class="underline text-info hover:text-accent" href="https://shop.nickinewell.art">my shop</a>. If there is something out of stock be sure to sign up at the bottom of the page to receive our missives that go out informing you of restocks and new items.
+              Please feel free to take your time browsing the goods I have to offer in <a class="underline text-accent hover:text-accent-focus" href="https://shop.nickinewell.art">my shop</a>. If there is something out of stock be sure to sign up at the bottom of the page to receive our missives that go out informing you of restocks and new items.
             </h2>
           </div>
 
