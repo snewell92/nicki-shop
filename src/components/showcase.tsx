@@ -1,3 +1,4 @@
+import { onMount } from "solid-js";
 import { Motion } from "@motionone/solid";
 import type { ImageMetadata } from "astro";
 
@@ -68,17 +69,23 @@ const finalX = [...xSteps, ...xTrans, ...xStepsTwo];
 const finalY = [...ySteps, ...yTrans, ...yStepsTwo];
 const finalOpacity = [...opacitySteps, ...opacityTrans, ...opacityStepsTwo];
 
+const getClientWidth = () => window.visualViewport?.width ?? 1000;
+
 export function Showcase({ image }: {image: ImageMetadata}) {
+  onMount(() => {
+    console.info('We see width as: ', getClientWidth());
+  });
+
   return (
     <Motion.img
       animate={{
-        opacity: finalOpacity,
-        scale: finalScale,
-        x: finalX,
-        y: finalY
+        opacity: [0, 0.5, 1, 1, 1, 1],
+        scale: [4, 4, 4, 4, 4, 4],
+        x: ['0%', '0%', '12.5%', '12.5%', '12.5%', '12.5%'],
+        y: ['0%', '0%', '12.5%', '12.5%', '12.5%', '12.5%']
       }}
       transition={{
-        duration: 25,
+        duration: 2,
         easing: "ease-in"
       }}
       style="opacity:0"

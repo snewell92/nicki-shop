@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/default.astro";
+import CoffeeCat from "../assets/images/coffee-cat.gif";
+---
+<Layout title="Links">
+
+  <h1 class="text-center mx-auto mt-12 w-fit text-4xl text-primary">Links</h1>
+
+  <p class="text-center mx-auto my-8 px-8 md:px-0 text-lg">The links below go to active sites to engage with me and my art ❤️</p>
+
+  <ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-6 justify-items-center mx-16 mt-4">
+    <a role="button" target="_blank" class="btn btn-primary btn-wide" href="https://www.etsy.com/shop/NickiNewellArtUK" aria-label="Etsy Shop">Etsy</a>
+    <a role="button" target="_blank" class="btn btn-primary btn-wide" href="https://www.instagram.com/nickinewellart" aria-label="Instagram">Instagram</a>
+    <a role="button" target="_blank" class="btn btn-primary btn-wide" href="https://www.youtube.com/dillydallydoodles" aria-label="YouTube">YouTube</a>
+    <a role="button" target="_blank" class="btn btn-primary btn-wide" href="https://www.facebook.com/nickinewellart" aria-label="Facebook">Facebook</a>
+    <a role="button" target="_blank" class="btn btn-primary btn-wide" href="http://twitter.com/nickinoodleart" aria-label="Twitter">Twitter</a>
+    <a role="button" target="_blank" class="btn btn-primary btn-wide" href="http://tiktok.com/@nickinoodleart" aria-label="TikTok">TikTok</a>
+    <a role="button" target="_blank" class="btn btn-primary btn-wide" href="http://ko-fi.com/nickinewellart/commissions" aria-label="Commissions via Ko-fi">Commissions - Kofi</a>
+    <a role="button" target="_blank" class="btn btn-primary btn-wide" href="http://ko-fi.com/nickinewellart" aria-label="Tip Jar via Kofi">Tip Jar - Kofi</a>
+    <a role="button" target="_blank" class="btn btn-primary btn-wide" href="https://patreon.com/nickinewellart" aria-label="Patreon">Patreon</a>
+    <a role="button" target="_blank" class="btn btn-primary btn-wide" href="https://Nickinewellart.redbubble.com" aria-label="Redbubble">Redbubble</a>
+    <a role="button" target="_blank" class="btn btn-primary btn-wide" href="https://www.print.work/partners/nickinewellart/https://www.print.work/partners/nickinewellart/" aria-label="20 Percent Off Print dot Work">20% Off print.work</a>
+  </ul>
+
+  <div class="relative flex justify-center pt-2 mb-16">
+    <img class="max-w-[445px] w-[80vw] md:w-[40vw] mask mask-squircle mt-8 min-w-[420px]" src={CoffeeCat.src} width={CoffeeCat.width} height={CoffeeCat.height} alt="A Cat smelling great coffee." />
+  </div>
+</Layout>

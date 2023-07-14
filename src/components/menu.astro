@@ -1,0 +1,25 @@
+---
+import { Icon } from "astro-icon"
+
+const { page } = Astro.props
+
+const isActive = (pageName: string) =>
+  pageName.trim().toLowerCase() === page.trim().toLowerCase()
+---
+
+<nav class="relative navbar z-10 bg-neutral text-neutral-content">
+  <ul class="menu menu-horizontal px-1 flex-nowrap overflow-auto overflow-y-hidden">
+    <li><a class:list={['link', {'text-xl decoration-accent': isActive('home')}]} href="/" aria-label="Home">Home</a></li>
+    <li><a class:list={['link', {'text-xl decoration-accent': isActive('links')}]} href="/links" aria-label="Links">Links</a></li>
+    {/*<li><a class:list={['link', {'text-xl decoration-accent': isActive('about')}]} href="/about" aria-label="About">About</a></li>*/}
+    {/*<li><a class:list={['link', {'text-xl decoration-accent': isActive('faq')}]} href="/links" aria-label="Links">FAQ</a></li>*/}
+    <li><a class="link" href="https://nicki.thenewells.us" target="_blank" aria-label="Portfolio">Portfolio</a></li>
+    <li><a class="link" href="https://ko-fi.com/nickinewellart/commissions" target="_blank" aria-label="Commissions">Commissions</a></li>
+    <li>
+      <a class="link" href="https://store.nickinewell.art" target="_blank" aria-label="Store">
+        <span>Shop</span>
+        <Icon pack="uil" name="store" class="w-6 h-6"/>
+      </a>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,23 @@
+---
+import Menu from "../components/menu.astro";
+import Newsletter from "../components/newsletter.astro";
+
+const { title } = Astro.props
+---
+
+<html lang="en" data-theme="coffee" class="bg-base-100" >
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Nicki Newell | {title}</title>
+  </head>
+  <body>
+    <div class="overflow-x-hidden">
+      <Menu page={title} />
+      <slot />
+      <Newsletter />
+    </div>
+  </body>
+</html>
